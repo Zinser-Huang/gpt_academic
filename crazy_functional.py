@@ -27,7 +27,7 @@ def get_crazy_functions():
     from crazy_functions.辅助功能 import 清除缓存
     from crazy_functions.批量Markdown翻译 import Markdown英译中
     from crazy_functions.批量总结PDF文档 import 批量总结PDF文档
-    from crazy_functions.PDF批量翻译 import 批量翻译PDF文档
+    from crazy_functions.批量翻译PDF文档_NOUGAT import 批量翻译PDF文档
     from crazy_functions.谷歌检索小助手 import 谷歌检索小助手
     from crazy_functions.理解PDF文档内容 import 理解PDF文档内容标准文件输入
     from crazy_functions.Latex全文润色 import Latex中文润色
@@ -35,6 +35,8 @@ def get_crazy_functions():
     from crazy_functions.批量Markdown翻译 import Markdown中译英
     from crazy_functions.虚空终端 import 虚空终端
     from crazy_functions.生成多种Mermaid图表 import 生成多种Mermaid图表
+    from crazy_functions.文章讨论写作 import 文章讨论写作
+    from crazy_functions.Writing_based_on_doc import write_specified_part_in_docx
 
     function_plugins = {
         "虚空终端": {
@@ -283,6 +285,20 @@ def get_crazy_functions():
             "AsButton": False,  # 加入下拉菜单中
             "Info": "批量将Markdown文件中文翻译为英文 | 输入参数为路径或上传压缩包",
             "Function": HotReload(Markdown中译英),
+        },
+        "文章讨论写作": {
+            "Group": "学术",
+            "Color": "stop",
+            "AsButton": False,  # 加入下拉菜单中
+            "Info": "理解PDF文档的内容并进行写作 | 输入参数为路径",
+            "Function": HotReload(文章讨论写作),
+        },
+        "writing_based_on_doc": {
+            "Group": "学术",
+            "Color": "stop",
+            "AsButton": False,  # 加入下拉菜单中
+            "Info": "writing_based_on_doc | 输入参数为路径",
+            "Function": HotReload(write_specified_part_in_docx),
         },
     }
 
